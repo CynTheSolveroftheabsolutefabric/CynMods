@@ -315,15 +315,18 @@ public class TitleScreen extends Screen {
       if (this.minecraft.isDemo()) {
          versionString = versionString + " Demo";
       }
+      
 
       if (Minecraft.checkModStatus().shouldReportAsModified()) {
          versionString = versionString + I18n.get("menu.modded");
       }
-
+      graphics.text(this.font, Component.literal("CynMods"), 2, this.height - 20, ARGB.white(widgetFade));
       graphics.text(this.font, versionString, 2, this.height - 10, ARGB.white(widgetFade));
       if (this.realmsNotificationsEnabled() && widgetFade >= 1.0F) {
          this.realmsNotificationsScreen.extractRenderState(graphics, mouseX, mouseY, a);
       }
+      
+      
    }
 
    @Override
